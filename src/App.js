@@ -3,30 +3,34 @@ import logo from './logo.svg';
 import './App.css';
 import Staffs from './staffs/staffs';
 
-const API = 'https://hn.algolia.com/api/v1/search?query='
-const DEFAULT_QUERY = 'redux'
+const API = 'https://csapi.herokuapp.com/api/v1/businesses/'
 
 class App extends Component {
   state = {
     hits: [],
   }
-  
+
   componentDidMount() {
-  fetch(API + DEFAULT_QUERY)
+  fetch(API)
     .then(response => response.json())
-    .then(data => this.setState({ hits: data.hits }));
+    .then(data => this.setState({ hits: data}));
   }
-  
+
   showMe = () => {
     console.log(this.state.hits)
   }
+
   render() {
     const { hits } = this.state
     return (
       <div className="App">
         {hits.map(hit =>
-          <div key={hit.objectID}>
-          <a href={hit.url}>{hit.title}</a>
+          <div key={hit.id}>
+            <h2> {hit.name} </h2>
+              <ul>
+                <li>{hit.city}</li>
+                <li>{hit.address}</li>
+              </ul>
           </div>
         )}
         <button onClick={this.showMe}> Show me </button>
