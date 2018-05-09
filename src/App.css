@@ -1,7 +1,41 @@
 .App {
   text-align: center;
 }
+.new-cafe-button {
+  margin-top: 10%;
+  width: 100%
+}
+.input {
+  border: 0;
+  background: none;
+  outline: none;
+  margin-top:10px;
+  width: 100% ;
+  font-size: 11px;
+  float: left
+}
+.deleteButton {
+  visibility: hidden;
+  float: right;
+  margin: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  color: red;
+}
 
+.input:focus {
+  border: solid 1px lightgrey;
+}
+
+.shop-block {
+  float: left;
+  width: 30%;
+  background: lightyellow;
+  margin: 1%
+}
+.shop-block:hover .deleteButton {
+  visibility: visible;
+}
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
