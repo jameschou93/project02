@@ -31,7 +31,7 @@ class BusinessForm extends Component {
     }
 
     axios.put(
-      `http://localhost:3001/api/v1/businesses/${this.props.business.id}`,
+      `https://csapi.herokuapp.com/api/v1/businesses/${this.props.business.id}`,
       {
         business: business
       }

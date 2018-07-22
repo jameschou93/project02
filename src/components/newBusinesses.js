@@ -3,7 +3,7 @@ import axios from 'axios'
 import update from 'immutability-helper'
 import BusinessForm from './businessForm'
 import Business from './business'
-const API = 'http://localhost:3001/api/v1/businesses/'
+const API = 'https://csapi.herokuapp.com/api/v1/businesses'
 
 class NewBusinesses extends Component {
   state = {
