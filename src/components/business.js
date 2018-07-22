@@ -8,16 +8,16 @@ class Business extends Component {
   handleDelete = () => {
     this.props.onDelete(this.props.business.id)
   }
-  
+
+
   render () {
     return(
       <div className="shop-block" key={this.props.business.id}>
       <span className="deleteButton" onClick={this.handleDelete}> x </span>
         <h2 onClick={this.handleClick}> {this.props.business.name} </h2>
-          <ul>
-            <li onClick={this.handleClick} >{this.props.business.city}</li>
-            <li onClick={this.handleClick} >{this.props.business.address}</li>
-          </ul>
+          <img src={this.props.business.img_url} alt="cafe-icon" height="42" width="42" />
+          <p onClick={this.handleClick} >{this.props.business.city}</p>
+          <p onClick={this.handleClick} >{this.props.business.address}</p>
       </div>
     )
   }

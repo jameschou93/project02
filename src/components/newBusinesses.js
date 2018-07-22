@@ -22,7 +22,8 @@ class NewBusinesses extends Component {
             zip: '',
             wifi: '',
             phone: '',
-            bathroom: ''
+            bathroom: '',
+            img_url: ''
            }
         }
     )
@@ -82,16 +83,17 @@ class NewBusinesses extends Component {
     const { businesses } = this.state
     return (
       <div>
-      <span className="notification"> {this.state.notification}</span>
-      <button onClick={this.addNew} className="new-cafe-button"> New Cafe </button>
-      {businesses.map((business) => {
-        if(this.state.editID === business.id) {
-          return(<BusinessForm resetNotificaiton={this.resetNotificaiton} business={business} key={business.id} updateBusiness={this.updateBusiness}/>)
-        } else {
-          return(<Business onClick={this.enableEditing} onDelete={this.deleteBusiness} business={business} key={business.id}/>)
+        <div className="top-nav">
+          <span className="notification"> {this.state.notification}</span>
+        </div>
+        {businesses.map((business) => {
+          if(this.state.editID === business.id) {
+            return(<BusinessForm resetNotificaiton={this.resetNotificaiton} business={business} key={business.id} updateBusiness={this.updateBusiness}/>)
+          } else {
+            return(<Business onClick={this.enableEditing} onDelete={this.deleteBusiness} business={business} key={business.id}/>)
+          }
         }
-      }
-      )}
+        )}
       </div>
     )
   }

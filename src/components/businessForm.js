@@ -12,6 +12,7 @@ class BusinessForm extends Component {
       wifi: this.props.business.wifi,
       phone: this.props.business.phone,
       bathroom: this.props.business.bathroom,
+      img_url: this.props.business.img_url,
       notification: ''
     }
   }
@@ -25,7 +26,8 @@ class BusinessForm extends Component {
     const business = {
       name: this.state.name,
       address: this.state.address,
-      city: this.state.city
+      city: this.state.city,
+      img_url: this.state.img_url
     }
 
     axios.put(
@@ -51,6 +53,8 @@ class BusinessForm extends Component {
             placeholder='city' defaultValue={this.state.city} onChange={this.handleInput} />
           <input className='input' name="address"
             placeholder='address' defaultValue={this.state.address} onChange={this.handleInput} />
+          <input className='input' name="img_url"
+            placeholder='img_url' defaultValue={this.state.img_url} onChange={this.handleInput} />
         </form>
       </div>
     );
