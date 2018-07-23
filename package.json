@@ -1,6 +1,6 @@
 {
   "name": "project02",
-  "proxy": "http://localhost:30002/api/v1/businesses",
+  "proxy": "https://tacky-notes.herokuapp.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
